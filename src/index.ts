@@ -32,6 +32,6 @@ app.get('/blog-api/comentarios', CommentsControllers.GetAllComments);
 app.get('/blog-api/comentarios-por-autor', CommentsControllers.GetCommentsForAuthor);
 app.post('/blog-api/nuevo-comentario', CommentsControllers.CreateComment);
 app.delete('/blog-api/remover/comentario/:id', CommentsControllers.DeleteComment);
-app.put('/blog-api/actualizar-comentaio/:id', CommentsControllers.UpdateComment);
+app.put('/blog-api/actualizar-comentario/:id', CommentsControllers.UpdateComment);
 
 export { app };

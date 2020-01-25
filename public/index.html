@@ -15,18 +15,47 @@
       </section>
 
       <section>
+        <h3>Create</h3>
         <form id="new-comment">
           <label>
             Titulo:
-            <input class="new-comment-inputs" type="text" name="titulo" id="tituloInput" />
+            <input class="new-comment-inputs" type="text" name="titulo" id="newTituloInput" />
           </label>
           <label>
             Autor:
-            <input class="new-comment-inputs" type="text" name="autor" id="autorInput" />
+            <input class="new-comment-inputs" type="text" name="autor" id="newAutorInput" />
           </label>
           <label>
             Contenido:
-            <input class="new-comment-inputs" type="text" name="contenido" id="contenidoInput" />
+            <input class="new-comment-inputs" type="text" name="contenido" id="newContenidoInput" />
+          </label>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+
+      <section>
+        <h3>Update</h3>
+        <form id="update-comment">
+          <label>
+            Titulo:
+            <input class="update-comment-inputs" type="text" name="titulo" id="newTituloInput" />
+          </label>
+          <label>
+            Autor:
+            <input class="update-comment-inputs" type="text" name="autor" id="newAutorInput" />
+          </label>
+          <label>
+            Contenido:
+            <input
+              class="update-comment-inputs"
+              type="text"
+              name="contenido"
+              id="newContenidoInput"
+            />
+          </label>
+          <label>
+            Id:
+            <input class="update-comment-inputs" type="text" name="id" id="newidInput" />
           </label>
           <button type="submit">Enviar</button>
         </form>
