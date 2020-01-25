@@ -7,6 +7,7 @@ function init() {
   newCommentFormInit();
   updateCommentFormInit();
   RemoveCommentFormInit();
+  SearchByAuthorFormInit();
 }
 
 const Comentario = ({ titulo, autor, contenido, fecha, id }) => `
@@ -106,6 +107,35 @@ function RemoveCommentFormInit() {
     allCommentsContainer.innerHTML = '';
     for (let elem of comentarios) {
       allCommentsContainer.innerHTML += Comentario({ ...elem });
+    }
+  });
+}
+
+function SearchByAuthorFormInit() {
+  const form = document.getElementById('search-comment');
+
+  const container = document.getElementsByClassName('search-author')[0];
+  const inputs = document.getElementsByClassName('search-comment-inputs');
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+
+    const data = {};
+    for (let elem of inputs) {
+      data[elem.name] = elem.value;
+    }
+
+    console.log(data);
+
+    const newData = await fetch('/blog-api/comentarios-por-autor?autor=' + data['autor']);
+    const dataJSON = await newData.json();
+
+    container.innerHTML = '';
+    if (dataJSON.length > 0) {
+      for (let elem of dataJSON) {
+        container.innerHTML += Comentario({ ...elem });
+      }
+    } else {
     }
   });
 }
