@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mi Blog</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>Todos los Comentarios</h1>
+        <ul class="all-comments"></ul>
+      </section>
+
+      <section>
+        <form id="new-comment">
+          <label>
+            Titulo:
+            <input class="new-comment-inputs" type="text" name="titulo" id="tituloInput" />
+          </label>
+          <label>
+            Autor:
+            <input class="new-comment-inputs" type="text" name="autor" id="autorInput" />
+          </label>
+          <label>
+            Contenido:
+            <input class="new-comment-inputs" type="text" name="contenido" id="contenidoInput" />
+          </label>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
