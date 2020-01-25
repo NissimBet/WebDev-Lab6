@@ -6,6 +6,7 @@ function init() {
   getAllComentarios();
   newCommentFormInit();
   updateCommentFormInit();
+  RemoveCommentFormInit();
 }
 
 const Comentario = ({ titulo, autor, contenido, fecha, id }) => `
@@ -76,6 +77,32 @@ function updateCommentFormInit() {
 
     const index = comentarios.find(val => val.id === data['id']);
     comentarios[index] = newDataJSON;
+    allCommentsContainer.innerHTML = '';
+    for (let elem of comentarios) {
+      allCommentsContainer.innerHTML += Comentario({ ...elem });
+    }
+  });
+}
+
+function RemoveCommentFormInit() {
+  const form = document.getElementById('remove-comment');
+
+  const inputs = document.getElementsByClassName('remove-comment-inputs');
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+
+    const data = {};
+    for (let elem of inputs) {
+      data[elem.name] = elem.value;
+    }
+
+    const newData = await fetch('/blog-api/remover-comentario/' + data['id'], {
+      method: 'DELETE',
+    });
+
+    const index = comentarios.find(val => val.id === data['id']);
+    comentarios.splice(index, 1);
     allCommentsContainer.innerHTML = '';
     for (let elem of comentarios) {
       allCommentsContainer.innerHTML += Comentario({ ...elem });
