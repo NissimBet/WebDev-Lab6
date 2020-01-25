@@ -125,17 +125,17 @@ function SearchByAuthorFormInit() {
       data[elem.name] = elem.value;
     }
 
-    console.log(data);
-
     const newData = await fetch('/blog-api/comentarios-por-autor?autor=' + data['autor']);
+    if (newData.status > 210) {
+      container.innerHTML = '';
+      return;
+    }
     const dataJSON = await newData.json();
 
-    container.innerHTML = '';
     if (dataJSON.length > 0) {
       for (let elem of dataJSON) {
         container.innerHTML += Comentario({ ...elem });
       }
-    } else {
     }
   });
 }
