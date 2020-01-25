@@ -1,3 +1,5 @@
+const allCommentsContainer = document.getElementsByClassName('all-comments')[0];
+
 function init() {
   getAllComentarios();
   newCommentFormInit();
@@ -8,7 +10,6 @@ const Comentario = ({ titulo, autor, contenido, fecha, id }) => `
 `;
 
 async function getAllComentarios() {
-  const allCommentsContainer = document.getElementsByClassName('all-comments')[0];
   const data = await fetch('/blog-api/comentarios');
   const dataJson = await data.json();
   allCommentsContainer.innerHTML = '';
@@ -30,7 +31,7 @@ function newCommentFormInit() {
       data[elem.name] = elem.value;
     }
 
-    await fetch('/blog-api/nuevo-comentario', {
+    const newData = await fetch('/blog-api/nuevo-comentario', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -38,6 +39,8 @@ function newCommentFormInit() {
       },
       body: JSON.stringify(data),
     });
+    const newDataJSON = await newData.json();
+    allCommentsContainer.innerHTML += Comentario({ ...newDataJSON });
   });
 }
 
