@@ -39,74 +39,81 @@
         <p class="error"></p>
       </div>
 
-      <section>
-        <h3>Create</h3>
-        <form id="new-comment">
-          <label>
-            Titulo:
-            <input class="new-comment-inputs" type="text" name="titulo" id="newTituloInput" />
-          </label>
-          <label>
-            Autor:
-            <input class="new-comment-inputs" type="text" name="autor" id="newAutorInput" />
-          </label>
-          <label>
-            Contenido:
-            <input class="new-comment-inputs" type="text" name="contenido" id="newContenidoInput" />
-          </label>
-          <button type="submit">Enviar</button>
-        </form>
-      </section>
+      <section class="forms">
+        <div class="forms-section">
+          <h3>Create</h3>
+          <form id="new-comment">
+            <label>
+              Titulo:
+              <input class="new-comment-inputs" type="text" name="titulo" id="newTituloInput" />
+            </label>
+            <label>
+              Autor:
+              <input class="new-comment-inputs" type="text" name="autor" id="newAutorInput" />
+            </label>
+            <label>
+              Contenido:
+              <input
+                class="new-comment-inputs"
+                type="text"
+                name="contenido"
+                id="newContenidoInput"
+              />
+            </label>
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
 
-      <section>
-        <h3>Update</h3>
-        <form id="update-comment">
-          <label>
-            Titulo:
-            <input class="update-comment-inputs" type="text" name="titulo" id="newTituloInput" />
-          </label>
-          <label>
-            Autor:
-            <input class="update-comment-inputs" type="text" name="autor" id="newAutorInput" />
-          </label>
-          <label>
-            Contenido:
-            <input
-              class="update-comment-inputs"
-              type="text"
-              name="contenido"
-              id="newContenidoInput"
-            />
-          </label>
-          <label>
-            Id:
-            <input class="update-comment-inputs" type="text" name="id" id="newidInput" />
-          </label>
-          <button type="submit">Enviar</button>
-        </form>
-      </section>
+        <div class="forms-section">
+          <h3>Update</h3>
+          <form id="update-comment">
+            <label>
+              Titulo:
+              <input class="update-comment-inputs" type="text" name="titulo" id="newTituloInput" />
+            </label>
+            <label>
+              Autor:
+              <input class="update-comment-inputs" type="text" name="autor" id="newAutorInput" />
+            </label>
+            <label>
+              Contenido:
+              <input
+                class="update-comment-inputs"
+                type="text"
+                name="contenido"
+                id="newContenidoInput"
+              />
+            </label>
+            <label>
+              Id:
+              <input class="update-comment-inputs" type="text" name="id" id="newidInput" />
+            </label>
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
 
-      <section>
-        <h3>Remove</h3>
-        <form id="remove-comment">
-          <label>
-            Id:
-            <input class="remove-comment-inputs" type="text" name="id" id="removeIdInput" />
-          </label>
-          <button type="submit">Enviar</button>
-        </form>
-      </section>
+        <div class="forms-section">
+          <h3>Remove</h3>
+          <form id="remove-comment">
+            <label>
+              Id:
+              <input class="remove-comment-inputs" type="text" name="id" id="removeIdInput" />
+            </label>
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
 
-      <section>
-        <h3>Search By Author</h3>
-        <form id="search-comment">
-          <label>
-            Autor:
-            <input class="search-comment-inputs" type="text" name="autor" id="searchIdInput" />
-          </label>
-          <button type="submit">Enviar</button>
-        </form>
-        <ul class="search-author"></ul>
+        <div class="forms-section">
+          <h3>Search By Author</h3>
+          <form id="search-comment">
+            <label>
+              Autor:
+              <input class="search-comment-inputs" type="text" name="autor" id="searchIdInput" />
+            </label>
+            <button type="submit">Enviar</button>
+          </form>
+          <ul class="search-author"></ul>
+        </div>
       </section>
     </main>
     <script src="./js/index.js"></script>
