@@ -1,3 +1,15 @@
+.comments-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+.comments-table th,
+.comments-table td {
+  padding: 10px 5px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
 .error {
   color: #930e0e;
   background-color: #ffbebe;

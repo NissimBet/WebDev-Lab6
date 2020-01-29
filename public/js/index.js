@@ -22,7 +22,13 @@ function hideError() {
 }
 
 const Comentario = ({ titulo, autor, contenido, fecha, id }) => `
-  <li>${autor} - ${titulo} - ${contenido} - ${fecha} - ${id}</li>
+<tr>
+<td>${titulo}</td>
+<td>${autor}</td>
+<td>${contenido}</td>
+<td>${fecha}</td>
+<td>${id}</td>
+</tr>
 `;
 
 async function getAllComentarios() {
