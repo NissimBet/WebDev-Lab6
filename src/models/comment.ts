@@ -62,7 +62,7 @@ export const CommentCollection = {
   },
   getById: async (id: String) => {
     try {
-      const found = await Comment.find({ id: id });
+      const found = await Comment.findOne({ id: id });
       return found;
     } catch (error) {
       throw Error(error);

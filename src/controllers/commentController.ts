@@ -7,6 +7,7 @@ export const GetAllComments: RequestHandler = async (_, res) => {
     return res.status(200).json(data);
   } catch (error) {
     console.log(error);
+    return res.sendStatus(404);
   }
 };
 
@@ -62,7 +63,7 @@ export const DeleteComment: RequestHandler = async (req, res) => {
   const { id } = req.params;
   try {
     const existsComment = await CommentCollection.getById(id);
-    if (existsComment && existsComment.length > 0) {
+    if (existsComment) {
       await CommentCollection.deleteComment(id);
       res.statusMessage = 'Comentario eliminado';
       res.status(200).send();
@@ -88,7 +89,8 @@ export const UpdateComment: RequestHandler = async (req, res) => {
         contenido ? (data.contenido = contenido) : '';
         titulo ? (data.titulo = titulo) : '';
 
-        const oldData = await CommentCollection.updateComment(bodyId, { ...data });
+        await CommentCollection.updateComment(bodyId, { ...data });
+        const oldData = await CommentCollection.getById(bodyId);
         res.statusMessage = 'Comentario modificado';
         res.status(202).json(oldData);
       } else {
